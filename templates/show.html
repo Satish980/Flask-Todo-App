@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questions</title>
+</head>
+<body>
+{% if new_qn|length < 1 %}
+        <h4 style="text-align: center;">There are no questions, Create new one below</h4>
+    {% else %}
+    <table border="1">
+        <tr>
+        	<th>S.No</th>
+            <th>Subject</th>
+            <th>Question</th>
+            <th>Option 1</th>
+            <th>Option 2</th>
+            <th>Option 3</th>
+            <th>Option 4</th>
+            <th>Answer</th>
+            <th>Color</th>
+        </tr>
+        {% for task in new_qn %}
+            <tr>
+            	<td>{{ task.qid }}</td>
+                <td>{{ task.subject }}</td>
+                <td>{{ task.question }}</td>
+                <td>{{ task.option1 }}</td>
+                <td>{{ task.option2 }}</td>
+                <td>{{ task.option3 }}</td>
+                <td>{{ task.option4 }}</td>
+                <td>{{ task.answer }}</td>
+                <td>{{ task.bcol }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
